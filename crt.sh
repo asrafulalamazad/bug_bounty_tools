@@ -1,0 +1,1 @@
+curl -s https://crt.sh/\?q\=%.$1\&output\=json | jq -r '.[].name_value' | sed 's/\*\.//g' | sort -u | rev | cut -d '.' -f 1,2,3 | sort -u | rev | tee -a $1-result.txt
